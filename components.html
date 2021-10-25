@@ -5,8 +5,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=1920, initial-scale=1.0" />
     <title>Project Components</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS only for the components page -->
+    <style>
+      .subtle {
+        background-color: rgb(216, 216, 216);
+        margin: 0.5rem;
+        padding: 0.5rem;
+      }
+    </style>
   </head>
   <body>
-    <!-- html HERE -->
+    <!-- HTML here -->
+    <!-- START main container -->
+    <div class="container-fluid">
+      <!-- START containers with utility classes -->
+      <h1>Containers with Utility Classes</h1>
+      <div class="container p-5 my-5 border">
+        <h2>Simple Container</h2>
+      </div>
+
+      <div class="container p-5 my-5 bg-dark text-white">
+        <h2>Container with a utility classes</h2>
+      </div>
+
+      <div class="container-fluid p-5 my-5 bg-primary text-white">
+        <h2>Fluid Container with utility classes</h2>
+      </div>
+      <!-- END containers with utility classes -->
+
+      <!-- START bootstrap grid layout -->
+      <div class="container-fluid">
+        <h1>Grid Layout</h1>
+        <h2>3 Columns X 4</h2>
+        <div class="row">
+          <div class="col-3">
+            <div class="col subtle">3 Columns</div>
+          </div>
+          <div class="col-3">
+            <div class="col subtle">3 Columns</div>
+          </div>
+          <div class="col-3">
+            <div class="col subtle">3 Columns</div>
+          </div>
+          <div class="col-3">
+            <div class="col subtle">3 Columns</div>
+          </div>
+        </div>
+
+        <h2>4 Columns X 3</h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="col subtle">4 Columns</div>
+          </div>
+          <div class="col-4">
+            <div class="col subtle">4 Columns</div>
+          </div>
+          <div class="col-4">
+            <div class="col subtle">4 Columns</div>
+          </div>
+        </div>
+
+        <h2>9 + 3 Columns</h2>
+        <div class="row">
+          <div class="col-9">
+            <div class="col subtle">9 Columns</div>
+          </div>
+          <div class="col-3">
+            <div class="col subtle">3 Columns</div>
+          </div>
+        </div>
+
+        <h2>8 + 4 Columns</h2>
+        <div class="row">
+          <div class="col-8">
+            <div class="col subtle">8 Columns</div>
+          </div>
+          <div class="col-4">
+            <div class="col subtle">4 Columns</div>
+          </div>
+        </div>
+
+        <h2>6 + 6 Columns</h2>
+        <div class="row">
+          <div class="col-6">
+            <div class="col subtle">6 Columns</div>
+          </div>
+          <div class="col-6">
+            <div class="col subtle">6 Columns</div>
+          </div>
+        </div>
+
+        <h2>4 + 8 Columns</h2>
+        <div class="row">
+          <div class="col-4">
+            <div class="col subtle">4 Columns</div>
+          </div>
+          <div class="col-8">
+            <div class="col subtle">8 Columns</div>
+          </div>
+        </div>
+
+        <h2>3 + 9 Columns</h2>
+        <div class="row">
+          <div class="col-3">
+            <div class="col subtle">3 Columns</div>
+          </div>
+          <div class="col-9">
+            <div class="col subtle">9 Columns</div>
+          </div>
+        </div>
+      </div>
+      <!-- END bootstrap grid layout -->
+    </div>
+    <!-- END main container -->
   </body>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
