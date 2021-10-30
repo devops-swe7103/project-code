@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=1920, initial-scale=1.0" />
     <title>Project Components</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
     <!-- Latest compiled and minified CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
@@ -434,6 +435,53 @@
         </button>
       </div>
       <!-- END badges -->
+
+      <!-- START cards -->
+      <div class="container-fluid">
+        <h1>Cards</h1>
+        <h2>Simple Cards</h2>
+        <div class="card" style="width: 400px">
+          <img
+            class="card-img-top"
+            src="https://www.w3schools.com/bootstrap5/paris.jpg"
+            alt="Card image"
+            style="width: 100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">John Doe</h4>
+            <p class="card-text">
+              Some example text some example text. John Doe is an architect and
+              engineer
+            </p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+          </div>
+        </div>
+        <h2>Horizontal Cards</h2>
+        <div class="card float-right">
+          <div class="row">
+            <div class="col-sm-5">
+              <img
+                class="d-block w-100"
+                src="https://www.w3schools.com/bootstrap5/paris.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col-sm-7">
+              <div class="card-block">
+                <!--           <h4 class="card-title">Small card</h4> -->
+                <p>Copy paste the HTML and CSS.</p>
+                <p>Change around the content for awsomenes</p>
+                <br />
+                <a href="#" class="btn btn-primary btn-sm float-right"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END cards -->
     </div>
     <!-- END main container -->
   </body>
