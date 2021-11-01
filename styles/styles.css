@@ -1,3 +1,108 @@
+:root {
+  --primary: #cbbbeb;
+  --primary-light: #dbd3eb;
+  --primary-dark: #716192;
+
+  --secondary: #e6e6e6;
+  --secondary-light: #f3f3f3;
+  --secondary-dark: #929292;
+}
+
 body {
   font: inherit;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
+
+/* START BUTTONS */
+.button {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.button:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.button-primary {
+  background-color: var(--primary);
+  color: rgb(22, 22, 22);
+  font-weight: 700;
+  border: 0.2rem solid var(--primary-dark);
+}
+
+.button-primary:hover {
+  background-color: var(--primary-light);
+  color: rgb(0, 0, 0);
+}
+
+.button-secondary {
+  background-color: var(--secondary);
+  color: rgb(22, 22, 22);
+  font-weight: 700;
+  border: 0.2rem solid var(--secondary-dark);
+}
+
+.button-secondary:hover {
+  background-color: var(--secondary-light);
+  color: rgb(0, 0, 0);
+}
+/* END BUTTONS */
+
+/* START PROPERTY PAGE */
+.property-title-card {
+  font: inherit;
+  width: 100%;
+  margin: 0.01rem;
+  padding: 2rem;
+  background-color: rgb(241, 241, 241);
+  line-height: 1.5;
+}
+
+.property-title-card .rent-amount {
+  font: inherit;
+}
+
+.property-title-card .rent-amount span.rent-monthly {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+#rent-monthly-amount {
+  font: inherit;
+}
+
+.property-title-card .rent-amount span.rent-weekly {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+#rent-weekly-amount {
+  font: inherit;
+}
+
+#property-badge.badge {
+  font: inherit;
+}
+
+.property-title-card .property-layout {
+  font: inherit;
+  font-weight: 700;
+}
+
+.property-title-card .property-location {
+  font: inherit;
+  font-weight: 300;
+}
+
+#area {
+  font: inherit;
+}
+
+#city {
+  font: inherit;
+}
+
+#postcode {
+  font: inherit;
+}
+
+/* END PROPERTY PAGE */
