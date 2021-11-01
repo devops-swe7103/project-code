@@ -606,6 +606,185 @@
         </div>
       </div>
       <!-- END modal -->
+
+      <!-- START forms -->
+      <div class="container-fluid">
+        <h1>Forms</h1>
+        <h2>Stacked Form</h2>
+        <form action="/action_page.php">
+          <div class="mb-3 mt-3">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="pwd">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pwd"
+              placeholder="Enter password"
+              name="pswd"
+            />
+          </div>
+          <h2>Inputs</h2>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Normal input"
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Disabled input"
+              disabled
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Readonly input"
+              readonly
+            />
+            <label for="comment">Text Area</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              id="comment"
+              name="text"
+            ></textarea>
+          </div>
+
+          <h2>Select List</h2>
+          <div class="mb-3">
+            <label for="sel1" class="form-label"
+              >Select list (select one):</label
+            >
+            <select class="form-select" id="sel1" name="sellist1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+
+          <h2>Data List</h2>
+          <div class="mb-3">
+            <label for="browser" class="form-label"
+              >Choose your browser from the list:</label
+            >
+            <input
+              class="form-control"
+              list="browsers"
+              name="browser"
+              id="browser"
+            />
+            <datalist id="browsers">
+              <option value="Edge"></option>
+              <option value="Firefox"></option>
+              <option value="Chrome"></option>
+              <option value="Opera"></option>
+              <option value="Safari"></option>
+            </datalist>
+          </div>
+
+          <h2>Checkboxes and Radio Buttons</h2>
+          <div class="mb-3">
+            <h3>Checkboxes</h3>
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="check1"
+                name="option1"
+                value="something"
+                checked
+              />
+              <label class="form-check-label" for="check1">Remember Me</label>
+            </div>
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="check2"
+                name="option2"
+                value="something"
+              />
+              <label class="form-check-label" for="check2">Option 2</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" disabled />
+              <label class="form-check-label">Option 3</label>
+            </div>
+
+            <h3>Radio Buttons</h3>
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="radio1"
+                name="optradio"
+                value="option1"
+                checked
+              />
+              <label class="form-check-label" for="radio1">Option 1</label>
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="radio2"
+                name="optradio"
+                value="option2"
+              />
+              <label class="form-check-label" for="radio2">Option 2</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" disabled />
+              <label class="form-check-label">Option 3</label>
+            </div>
+          </div>
+
+          <h2>Floating Labels - Inputs</h2>
+          <div class="form-floating mb-3 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              name="email"
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mt-3 mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="pwd"
+              placeholder="Enter password"
+              name="pswd"
+            />
+            <label for="pwd">Password</label>
+          </div>
+          <div class="form-floating mb-3 mt-3">
+            <textarea
+              class="form-control"
+              id="comment"
+              name="text"
+              placeholder="Comment goes here"
+            ></textarea>
+            <label for="comment">Comments</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <!-- END forms -->
     </div>
     <!-- END main container -->
   </body>
