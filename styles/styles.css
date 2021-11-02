@@ -9,7 +9,7 @@
 }
 
 body {
-  font: inherit;
+  color: inherit;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
@@ -48,8 +48,10 @@ body {
 /* END BUTTONS */
 
 /* START PROPERTY PAGE */
+
+/* start property title card */
 .property-title-card {
-  font: inherit;
+  color: inherit;
   width: 100%;
   margin: 0.01rem;
   padding: 2rem;
@@ -58,7 +60,7 @@ body {
 }
 
 .property-title-card .rent-amount {
-  font: inherit;
+  color: inherit;
 }
 
 .property-title-card .rent-amount span.rent-monthly {
@@ -67,7 +69,7 @@ body {
 }
 
 #rent-monthly-amount {
-  font: inherit;
+  color: inherit;
 }
 
 .property-title-card .rent-amount span.rent-weekly {
@@ -76,33 +78,174 @@ body {
 }
 
 #rent-weekly-amount {
-  font: inherit;
+  color: inherit;
 }
 
 #property-badge.badge {
-  font: inherit;
+  color: inherit;
 }
 
 .property-title-card .property-layout {
-  font: inherit;
+  color: inherit;
   font-weight: 700;
 }
 
 .property-title-card .property-location {
-  font: inherit;
+  color: inherit;
   font-weight: 300;
 }
 
 #area {
-  font: inherit;
+  color: inherit;
 }
 
 #city {
-  font: inherit;
+  color: inherit;
 }
 
 #postcode {
-  font: inherit;
+  color: inherit;
+}
+/* end property title card */
+
+/* start property parameters row */
+.property-parameters {
+  color: inherit;
 }
 
+.property-parameters .property-type {
+  color: inherit;
+}
+
+.property-parameters .property-parameter-title {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.property-parameters .property-parameter-detail {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#type-detail {
+  color: inherit;
+}
+
+.property-parameters .rooms {
+  color: inherit;
+}
+
+#room-count {
+  color: inherit;
+}
+
+.property-parameters .bathrooms {
+  color: inherit;
+}
+
+#bathroom-count {
+  color: inherit;
+}
+
+.property-parameters .size {
+  color: inherit;
+}
+
+.property-parameters .size .size-sqft {
+  color: inherit;
+}
+
+#sqft-units {
+  color: inherit;
+}
+
+.property-parameters .size .size-sqm {
+  color: inherit;
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+#sqm-units {
+  color: inherit;
+}
+
+.property-parameters .letting-type {
+  color: inherit;
+}
+
+#let-type {
+  color: inherit;
+}
+
+.property-parameters .furnish-type {
+  color: inherit;
+}
+
+#furnish-type {
+  color: inherit;
+}
+/* end property parameters row */
+
+/* start property key features row */
+.property-key-features {
+  color: inherit;
+}
+/* end property key features row */
+
+/* start property description row */
+.property-description {
+  color: inherit;
+}
+
+.property-description p {
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+/* end property description row */
+
+/* start property location map row */
+.property-location-map {
+  color: inherit;
+}
+
+#property-map {
+  color: inherit;
+}
+
+#property-map img {
+  color: inherit;
+  width: 100%;
+}
+/* end property location map row */
+
+/* start agent details row */
+.agent-details {
+  color: inherit;
+}
+
+#agent-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#agent-address {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+#agent-details-logo {
+  color: inherit;
+}
+
+#agent-details-logo img {
+  width: 100%;
+}
+
+#agent-details-description {
+  color: inherit;
+}
+
+/* end agent details row */
 /* END PROPERTY PAGE */
