@@ -38,31 +38,12 @@
       <!-- END buttons -->
       <!-- START property listing page -->
       <div class="property-page">
-        <h2 class="p-2">Property Page</h2>
+        <h2 class="m-3">Property Page</h2>
         <div class="row">
-          <div class="col-lg-3 col-md-4">
-            <div class="property-title-card">
-              <div class="rent-amount">
-                <span class="rent-monthly"
-                  >£<span id="rent-monthly-amount">995</span> pcm</span
-                >
-                <span class="rent-weekly"
-                  >£<span id="rent-weekly-amount">205</span> pw</span
-                >
-                <div class="badge bg-primary" id="property-badge">
-                  Added 5 days ago
-                </div>
-              </div>
-              <div class="property-layout">3 bed flat to rent</div>
-              <div class="property-location">
-                <span id="area">Bradshawgate</span>
-                <span id="city">Manchester</span> <span id="postcode">M4</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9 col-md-8">
+          <!-- START carousel and property details -->
+          <div class="col-md-8">
             <!-- START carousel -->
-            <div class="row carousel mb-3">
+            <div class="row carousel">
               <!-- Carousel -->
               <div
                 id="demo"
@@ -137,6 +118,33 @@
               </div>
             </div>
             <!-- END carousel -->
+
+            <!-- START property cost parameters -->
+            <div class="property-title-card">
+              <div class="row text-center pb-2 mb-1">
+                <div class="col-12">
+                  <div class="rent-amount">
+                    <span class="rent-monthly"
+                      >£<span id="rent-monthly-amount">995</span> pcm</span
+                    >
+                    <span class="rent-weekly"
+                      >£<span id="rent-weekly-amount">205</span> pw</span
+                    >
+                    <div class="badge bg-primary" id="property-badge">
+                      Added 5 days ago
+                    </div>
+                  </div>
+                  <div class="property-layout">3 bed flat to rent</div>
+                  <div class="property-location">
+                    <span id="area">Bradshawgate</span>
+                    <span id="city">Manchester</span>
+                    <span id="postcode">M4</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END property cost parameters -->
+
             <!-- START key property parameters -->
             <div class="property-parameters">
               <div class="row mt-1 mb-2 text-center border-bottom border-3">
@@ -278,20 +286,10 @@
               <h2>About the Agent</h2>
               <div class="row mb-3">
                 <div class="col-9">
-                  <div id="agent-name">Moda, Angel Gardens</div>
-                  <div id="agent-address">Rochdale Road, Manchester M4 4GE</div>
-                </div>
-                <div class="col-3">
-                  <div id="agent-details-logo">
-                    <img
-                      src="/assets/mockups/agent-logo.jpg"
-                      alt="agent logo"
-                    />
+                  <div id="agent-details-name">Moda, Angel Gardens</div>
+                  <div id="agent-details-address">
+                    Rochdale Road, Manchester M4 4GE
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
                   <div id="agent-details-description">
                     A whole new way to rent. From studio to penthouse
                     apartments, fully furnished, beautifully designed homes in
@@ -302,10 +300,50 @@
                     internet... all included in your rent.
                   </div>
                 </div>
+                <div class="col-3">
+                  <div id="agent-details-logo">
+                    <img
+                      src="/assets/mockups/agent-logo.jpg"
+                      alt="agent logo"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <!-- END agent details -->
           </div>
+          <!-- END carousel and property details -->
+
+          <!-- START agent details card -->
+          <div class="col-md-4">
+            <div class="agent-card">
+              <div class="row p-3">
+                <div class="col-md-12 text-center">
+                  <div class="agent-cart-title">Marketed By</div>
+                  <img
+                    alt="Bootstrap Image Preview"
+                    src="/assets/mockups/agent-logo.jpg"
+                  />
+                  <div class="agent-card-name">Moda, Angel Gardens</div>
+                  <div class="agent-card-address">
+                    Rochdale Road, Manchester M4 4GE
+                  </div>
+                  <div class="agent-card-contact m-1 pt-2 pb-2">
+                    Call agent:
+                    <span id="agent-card-phone-number">0161 468 1439</span>
+                    <button
+                      type="button"
+                      class="btn button button-secondary"
+                      id="agent-card-contact-button"
+                    >
+                      Request Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END agent details card -->
         </div>
       </div>
       <!-- END property listing page -->

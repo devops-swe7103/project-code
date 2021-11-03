@@ -8,6 +8,10 @@
   --secondary-dark: #929292;
 }
 
+html {
+  transition: all 0.25s ease-in-out;
+}
+
 body {
   color: inherit;
   font-family: "Roboto", sans-serif;
@@ -53,8 +57,6 @@ body {
 .property-title-card {
   color: inherit;
   width: 100%;
-  margin: 0.01rem;
-  padding: 2rem;
   background-color: rgb(241, 241, 241);
   line-height: 1.5;
 }
@@ -73,7 +75,7 @@ body {
 }
 
 .property-title-card .rent-amount span.rent-weekly {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
 }
 
@@ -82,16 +84,15 @@ body {
 }
 
 #property-badge.badge {
-  color: inherit;
+  font-size: 0.9rem;
 }
 
 .property-title-card .property-layout {
-  color: inherit;
   font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .property-title-card .property-location {
-  color: inherit;
   font-weight: 300;
 }
 
@@ -225,12 +226,12 @@ body {
   color: inherit;
 }
 
-#agent-name {
+#agent-details-name {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-#agent-address {
+#agent-details-address {
   font-size: 0.9rem;
   font-weight: 300;
 }
@@ -246,6 +247,48 @@ body {
 #agent-details-description {
   color: inherit;
 }
-
 /* end agent details row */
+
+/* start agent card */
+.agent-card {
+  background-color: var(--secondary-light);
+  box-shadow: 0 2px 16px 0 rgb(0 0 0 / 20%);
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.agent-card .agent-cart-title {
+  font-weight: 100;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.agent-card img {
+  color: inherit;
+}
+
+.agent-card .agent-card-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.agent-card .agent-card-address {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.agent-card .agent-card-contact {
+  background-color: var(--primary-light);
+}
+
+#agent-card-phone-number {
+  color: inherit;
+}
+
+#agent-card-contact-button {
+  color: inherit;
+}
+/* end agent card */
 /* END PROPERTY PAGE */
