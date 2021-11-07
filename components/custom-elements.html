@@ -23,90 +23,46 @@
     <!-- HTML here -->
     <!-- START main container -->
     <div class="container-fluid">
-      <div class="contact-agent-page">
-        <div class="row">
-          <div class="col-md-8 p-4">
-            <h1>Contact Agent</h1>
-            <!-- Name email phone message optional view property  -->
-            <form>
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text">First and last name</span>
-                  <input
-                    type="text"
-                    aria-label="First name"
-                    class="form-control"
-                  />
-                  <input
-                    type="text"
-                    aria-label="Last name"
-                    class="form-control"
-                  />
+      <div class="property-listing-page">
+        <div class="page-header"></div>
+        <div class="page-title-column">
+          Properties in
+          <div class="location-name">Manchester</div>
+        </div>
+        <div class="property-cards-column">
+          <div class="property-list-card">
+            <div class="property-image">
+              <img src="/assets/mockups/property-image.jpg" alt="" />
+            </div>
+            <div class="property-primary-details">
+              <div class="rent-details-row">
+                <div class="rental-details">
+                  <div class="rent-amount">GBP 2245</div>
+                  <div class="rent-summary">2 bedroom flat to rent</div>
+                  <div class="room-layout">2 Beds 2 Baths 1 Lounge</div>
+                </div>
+                <div class="agent-image">
+                  <img src="/assets/mockups/agent-logo.jpg" alt="" />
                 </div>
               </div>
-              <div class="mb-3">
-                <label for="email-address" class="form-label"
-                  >Email Address</label
-                >
-                <input type="email" class="form-control" id="email-address" />
+              <div class="location-details-row">
+                Dickenson Road, Manchester M14
               </div>
-              <div class="mb-3">
-                <label for="phone-number" class="form-label"
-                  >Phone Number</label
-                >
-                <input type="tel" class="form-control" id="phone-number" />
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
-              </div>
-              <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="view-property"
-                />
-                <label class="form-check-label" for="view-property"
-                  >I would like to view this property</label
-                >
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-          <div class="col-md-4 p-4">
-            <div class="contact-agent-property-card">
-              <div class="property-image">
-                <img
-                  src="/assets/mockups/property-image.jpg"
-                  id="property-img-src"
-                  sizes="(max-width: 479px) 86vw, (max-width: 767px) 91vw, (max-width: 991px) 93vw, 95vw"
-                  alt=""
-                  class="image"
-                />
-              </div>
-              <div class="rent-amount">GBP 450 pcm</div>
-              <div class="proeprty-type">Studio to rent</div>
-              <div class="property-location">Bradshawgate, Bolton BL1</div>
-              <div class="property-specs">
-                <div class="text-block">1 Bed 1 Bath</div>
-              </div>
-              <div class="agent-details-row">
-                <div class="agent-details">
-                  <div class="agent-name">Livingway</div>
-                  <div class="agent-address">
-                    G03 Jactin House, 24 Hood Street, Manchester, M4 6WX
-                  </div>
-                </div>
-                <img
-                  src="/assets/mockups/agent-logo.jpg"
-                  alt=""
-                  class="agent-logo"
-                />
-              </div>
+            </div>
+            <div class="property-secondary-details">
+              <div class="listing-date">Listed on 21 Nov 2021</div>
+              <div class="availability-date">Available on 21 Nov 2021</div>
+              <div class="agent-contact-number">Phone: 2455 885 125</div>
+              <div class="wishlist-property">Wishlist</div>
             </div>
           </div>
         </div>
+        <div class="secondary-content-row"></div>
+        <div class="page-footer"></div>
       </div>
+      <!-- START property card -->
+
+      <!-- END property card -->
     </div>
     <!-- END main container -->
   </body>
