@@ -431,40 +431,14 @@ body {
 /* START property listing cards */
 
 .property-listing-page {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, auto);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.property-listing-page .page-header {
-  grid-area: 1 / 1 / 2 / 5;
-  background-color: rgb(255, 233, 233);
-  min-height: 100px;
-}
-.property-listing-page .page-title-column {
-  grid-area: 2 / 1 / 3 / 2;
-  background-color: rgb(251, 255, 214);
-  min-height: 100px;
-}
-.property-listing-page .property-cards-column {
-  grid-area: 2 / 2 / 3 / 5;
-  min-height: 100px;
-}
-.property-listing-page .secondary-content-row {
-  grid-area: 3 / 1 / 4 / 5;
-  background-color: rgb(198, 253, 255);
-  min-height: 100px;
-}
-.property-listing-page .page-footer {
-  grid-area: 4 / 1 / 5 / 5;
-  background-color: rgb(195, 188, 255);
-  min-height: 100px;
+  display: inherit;
 }
 
 .property-listing-page .page-header {
   font: inherit;
+  min-height: 2rem;
+  padding: 1rem;
+  background-color: #f3f3f3;
 }
 
 .property-listing-page .page-title-column {
@@ -563,7 +537,23 @@ body {
   padding: 0.5rem;
 }
 
-.property-list-card .secondary-content-row {
+.property-secondary-details .listing-date {
+  font: inherit;
+}
+
+.property-secondary-details .availability-date {
+  font: inherit;
+}
+
+.property-secondary-details .agent-contact-number {
+  font: inherit;
+}
+
+.property-secondary-details .wishlist-property {
+  font: inherit;
+}
+
+.property-listing-page .secondary-content-row {
   font: inherit;
 }
 
@@ -571,4 +561,27 @@ body {
   font: inherit;
 }
 
-/* END property listing cards */
+/* responsive layouts for cards */
+
+/* medium screens */
+@media (min-width: 767px) and (max-width: 1200px) {
+  .property-cards-column .property-list-card {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+/* mobile screens */
+@media (max-width: 767px) {
+  .property-cards-column .property-list-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .property-secondary-details .availability-date {
+    display: none;
+  }
+
+  .property-secondary-details .agent-contact-number {
+    display: none;
+  }
+}
