@@ -585,3 +585,62 @@ body {
     display: none;
   }
 }
+/* END property listing cards */
+
+/* START footer similar properties row */
+.secondary-content-row {
+  background-color: var(--primary-light);
+  padding: 1rem;
+}
+
+.secondary-content-row .similar-properties-cards {
+  font: inherit;
+}
+
+.similar-properties-cards .similar-properties-card {
+  border: 1px solid #000000;
+  padding: 0.5rem;
+  /* margin: 0.5rem; */
+}
+
+.similar-properties-card .property-image {
+  font: inherit;
+  margin: -0.5rem -0.5rem 1rem -0.5rem;
+}
+
+.similar-properties-card .property-image img {
+  font: inherit;
+  width: 100%;
+}
+
+.similar-properties-card .property-details {
+  font: inherit;
+}
+
+.property-details .rent-amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.property-details .rent-summary {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.property-details .room-layout {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.property-details .location-address {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.property-details .wishlist-property {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: var(--secondary-light);
+}
+
+/* END footer similar properties row */
