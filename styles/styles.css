@@ -18,6 +18,10 @@ body {
   font-weight: 500;
 }
 
+body main > div.container-fluid {
+  padding-top: 60px;
+}
+
 /* START BUTTONS */
 .button {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
