@@ -1,0 +1,130 @@
+<%# getting header content from /partials/header.ejs %> <%-
+include("./partials/header.ejs") %>
+
+<!-- Full Page Image Header with Vertically Centered Content -->
+<div class="search-page">
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12 text-center">
+          <h1 class="display-3">House Rental With Ease</h1>
+          <p>Search for properties in your city or postcode</p>
+          <form id="search-form" action="/search/" method="POST">
+            <div class="row">
+              <div class="col-md-5">
+                <label for="city" class="form-label">
+                  <div class="search-heading">Search by City</div>
+                </label>
+                <input type="text" name="city" class="form-control" />
+              </div>
+              <div class="col-md-2" style="font-size: 2rem">
+                <div class="search-heading">OR</div>
+              </div>
+              <div class="col-md-5">
+                <label for="postcode" class="form-label">
+                  <div class="search-heading">Search by Postcode</div>
+                </label>
+                <input type="text" name="postcode" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 sub-section">
+                <p class="search-heading">Bedrooms</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <select class="form-select" name="minBeds" id="min-beds">
+                      <option value="0" selected>No Minimum</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      <option value="3">Four</option>
+                      <option value="5">Five+</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" name="maxBeds" id="max-beds">
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      <option value="3">Four</option>
+                      <option value="5">Five+</option>
+                      <option value="0" selected>No Maximum</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 sub-section">
+                <p class="search-heading">Price (pcm)</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <select class="form-select" name="minPrice" id="min-price">
+                      <option value="0" selected>No Minimum</option>
+                      <option value="250">250</option>
+                      <option value="500">500</option>
+                      <option value="750">750</option>
+                      <option value="1000">1000</option>
+                      <option value="1250">1250</option>
+                      <option value="1500">1500</option>
+                      <option value="2000">2000+</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" name="maxPrice" id="max-price">
+                      <option value="250">250</option>
+                      <option value="500">500</option>
+                      <option value="750">750</option>
+                      <option value="1000">1000</option>
+                      <option value="1250">1250</option>
+                      <option value="1500">1500</option>
+                      <option value="2000">2000+</option>
+                      <option value="0" selected>No Maximum</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 sub-section">
+                <p class="search-heading">Type</p>
+                <select
+                  class="form-select"
+                  name="propertyType"
+                  id="property-type"
+                >
+                  <option value="all" selected>All Types</option>
+                  <option value="house">Houses</option>
+                  <option value="flat">Flats</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <button
+                  type="submit"
+                  value="submit"
+                  class="btn btn-primary btn-lg"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="fw-light">Page Content</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab
+        nulla dolorum autem nisi officiis blanditiis voluptatem hic, assumenda
+        aspernatur facere ipsam nemo ratione cumque magnam enim fugiat
+        reprehenderit expedita.
+      </p>
+    </div>
+  </section>
+</div>
+
+<%# getting footer from partials/footer.ejs %> <%-
+include(`./partials/footer.ejs`) %>

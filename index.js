@@ -1,8 +1,15 @@
 const express = require(`express`);
 const path = require(`path`);
+const bodyParser = require(`body-parser`);
 
 // initializing express
 const app = express();
+
+// using parsers to process form submitted and json data
+// create application/json parser
+const jsonParser = bodyParser.json();
+// create application/x-www-form-urlencoded parser
+const urlEncodedParser = bodyParser.urlencoded({ extended: true });
 
 // serving static file assets from /public
 app.use(express.static(path.join(__dirname, `public`)));
@@ -30,12 +37,35 @@ app.get(`/`, (req, res) => {
 
 // all routes below
 
+// /base
+app.get(`/base`, (req, res) => {
+  res.render(`base`);
+});
+
 // /search/
 app.get(`/search/`, (req, res) => {
-  res.send(`GET: /search/`);
+  // res.send(`GET: /search/`);
+  res.render(`search`);
 });
-app.post(`/search/`, (req, res) => {
-  res.send(`POST: /search/`);
+app.post(`/search/`, urlEncodedParser, (req, res) => {
+  if (!req.body) {
+    res.sendStatus(400);
+  } else {
+    // res.send(`POST: /search/`);
+    console.log("Got body:", req.body);
+
+    let { city, postcode, minBeds, maxBeds, minPrice, maxPrice } = req.body;
+
+    // res.send("Got body:", city, postcode, minBeds, maxBeds, minPrice, maxPrice);
+    res.send(`Got body:,
+     ${city},
+     ${postcode},
+     ${minBeds},
+     ${maxBeds},
+     ${minPrice},
+     ${maxPrice}`);
+    // res.sendStatus(200);
+  }
 });
 
 // /search/city/
@@ -56,7 +86,8 @@ app.post(`/search/postcode/`, (req, res) => {
 
 // /properties/all/
 app.get(`/properties/all/`, (req, res) => {
-  res.send(`GET: /properties/all/`);
+  // res.send(`GET: /properties/all/`);
+  res.render(`property-listing-page`);
 });
 app.post(`/properties/all/`, (req, res) => {
   res.send(`POST: /properties/all/`);
@@ -110,7 +141,8 @@ app.post(`/property/add`, (req, res) => {
 app.get(`/property/:propertyID`, (req, res) => {
   const { propertyID } = req.params;
   if (propertyID) {
-    res.send(`GET: /property/:propertyID ${propertyID}`);
+    // res.send(`GET: /property/:propertyID ${propertyID}`);
+    res.render(`single-property`, { propertyID });
   } else {
     res.send(`ERROR: GET: /property/:propertyID ${propertyID}`);
   }
@@ -121,6 +153,25 @@ app.post(`/property/:propertyID`, (req, res) => {
     res.send(`POST: /property/:propertyID ${propertyID}`);
   } else {
     res.send(`ERROR: POST: /property/:propertyID ${propertyID}`);
+  }
+});
+
+// /property/:propertyID/appointment
+app.get(`/property/:propertyID/appointment`, (req, res) => {
+  const { propertyID } = req.params;
+  if (propertyID) {
+    // res.send(`GET: /property/:propertyID/appointment ${propertyID}`);
+    res.render(`contact-agent`, { propertyID });
+  } else {
+    res.send(`ERROR: GET: /property/:propertyID/appointment ${propertyID}`);
+  }
+});
+app.post(`/property/:propertyID/appointment`, (req, res) => {
+  const { propertyID } = req.params;
+  if (propertyID) {
+    res.send(`POST: /property/:propertyID/appointment ${propertyID}`);
+  } else {
+    res.send(`ERROR: POST: /property/:propertyID/appointment ${propertyID}`);
   }
 });
 
