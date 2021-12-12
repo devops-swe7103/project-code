@@ -18,8 +18,8 @@ body {
   font-weight: 500;
 }
 
-body main > div.container-fluid {
-  padding-top: 60px;
+main #content {
+  padding: 60px 0px 0;
 }
 
 /* START BUTTONS */

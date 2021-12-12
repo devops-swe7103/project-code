@@ -17,6 +17,9 @@ app.get(`/`, (req, res) => {
 });
 
 // routes list
+// /search/
+// /search/city/
+// /search/postcode/
 // /properties/all/
 // /properties/in/:postcode
 // /property/add
@@ -26,6 +29,31 @@ app.get(`/`, (req, res) => {
 // /agent/:agentID
 
 // all routes below
+
+// /search/
+app.get(`/search/`, (req, res) => {
+  res.send(`GET: /search/`);
+});
+app.post(`/search/`, (req, res) => {
+  res.send(`POST: /search/`);
+});
+
+// /search/city/
+app.get(`/search/city/`, (req, res) => {
+  res.send(`GET: /search/city/`);
+});
+app.post(`/search/city/`, (req, res) => {
+  res.send(`POST: /search/city/`);
+});
+
+// /search/postcode/
+app.get(`/search/postcode/`, (req, res) => {
+  res.send(`GET: /search/postcode/`);
+});
+app.post(`/search/postcode/`, (req, res) => {
+  res.send(`POST: /search/postcode/`);
+});
+
 // /properties/all/
 app.get(`/properties/all/`, (req, res) => {
   res.send(`GET: /properties/all/`);
@@ -33,21 +61,40 @@ app.get(`/properties/all/`, (req, res) => {
 app.post(`/properties/all/`, (req, res) => {
   res.send(`POST: /properties/all/`);
 });
-// /properties/in/:postcode
-app.get(`/properties/in/:postcode`, (req, res) => {
+
+// /properties/postcode/:postcode
+app.get(`/properties/postcode/:postcode`, (req, res) => {
   const { postcode } = req.params;
   if (postcode) {
-    res.send(`GET: /properties/in/:postcode ${postcode}`);
+    res.send(`GET: /properties/postcode/:postcode ${postcode}`);
   } else {
-    res.send(`ERROR: GET: /properties/in/:postcode ${postcode}`);
+    res.send(`ERROR: GET: /properties/postcode/:postcode ${postcode}`);
   }
 });
-app.post(`/properties/in/:postcode`, (req, res) => {
+app.post(`/properties/postcode/:postcode`, (req, res) => {
   const { postcode } = req.params;
   if (postcode) {
-    res.send(`POST: /properties/in/:postcode ${postcode}`);
+    res.send(`POST: /properties/postcode/:postcode ${postcode}`);
   } else {
-    res.send(`ERROR: POST: /properties/in/:postcode ${postcode}`);
+    res.send(`ERROR: POST: /properties/postcode/:postcode ${postcode}`);
+  }
+});
+
+// /properties/city/:city
+app.get(`/properties/city/:city`, (req, res) => {
+  const { city } = req.params;
+  if (city) {
+    res.send(`GET: /properties/city/:city ${city}`);
+  } else {
+    res.send(`ERROR: GET: /properties/city/:city ${city}`);
+  }
+});
+app.post(`/properties/city/:city`, (req, res) => {
+  const { city } = req.params;
+  if (city) {
+    res.send(`POST: /properties/city/:city ${city}`);
+  } else {
+    res.send(`ERROR: POST: /properties/city/:city ${city}`);
   }
 });
 

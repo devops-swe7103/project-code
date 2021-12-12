@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=1920, initial-scale=1.0" />
-    <title>Home Finder</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homepage - Home Finder</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/"
+    />
     <!-- Latest compiled and minified CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
@@ -20,12 +23,11 @@
     />
   </head>
   <body class="d-flex flex-column h-100">
-    <!-- header here -->
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Fixed navbar</a>
+          <a class="navbar-brand" href="/">Home Finder</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -40,13 +42,31 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/properties/all/">All Properties</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search/">Search Properties</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/wishlist/">Wishlist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile/u12340987">Profile</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Disabled</a
+                >
               </li>
             </ul>
             <form class="d-flex">
@@ -64,9 +84,10 @@
         </div>
       </nav>
     </header>
-    <!-- START main container -->
-    <main>
-      <div class="container-fluid">
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <div id="content" class="container-fluid">
         <div class="property-listing-page">
           <div class="row main-content">
             <section class="py-5 text-center container">
@@ -87,165 +108,6 @@
                 </div>
               </div>
             </section>
-            <div class="album py-5 bg-light">
-              <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <svg
-                        class="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="225"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                      >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                          Thumbnail
-                        </text>
-                      </svg>
-
-                      <div class="card-body">
-                        <p class="card-text">
-                          This is a wider card with supporting text below as a
-                          natural lead-in to additional content. This content is
-                          a little bit longer.
-                        </p>
-                        <div
-                          class="
-                            d-flex
-                            justify-content-between
-                            align-items-center
-                          "
-                        >
-                          <div class="btn-group">
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-secondary"
-                            >
-                              View
-                            </button>
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-secondary"
-                            >
-                              Edit
-                            </button>
-                          </div>
-                          <small class="text-muted">9 mins</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <svg
-                        class="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="225"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                      >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                          Thumbnail
-                        </text>
-                      </svg>
-
-                      <div class="card-body">
-                        <p class="card-text">
-                          This is a wider card with supporting text below as a
-                          natural lead-in to additional content. This content is
-                          a little bit longer.
-                        </p>
-                        <div
-                          class="
-                            d-flex
-                            justify-content-between
-                            align-items-center
-                          "
-                        >
-                          <div class="btn-group">
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-secondary"
-                            >
-                              View
-                            </button>
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-secondary"
-                            >
-                              Edit
-                            </button>
-                          </div>
-                          <small class="text-muted">9 mins</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <svg
-                        class="bd-placeholder-img card-img-top"
-                        width="100%"
-                        height="225"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice"
-                        focusable="false"
-                      >
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                          Thumbnail
-                        </text>
-                      </svg>
-
-                      <div class="card-body">
-                        <p class="card-text">
-                          This is a wider card with supporting text below as a
-                          natural lead-in to additional content. This content is
-                          a little bit longer.
-                        </p>
-                        <div
-                          class="
-                            d-flex
-                            justify-content-between
-                            align-items-center
-                          "
-                        >
-                          <div class="btn-group">
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-secondary"
-                            >
-                              View
-                            </button>
-                            <button
-                              type="button"
-                              class="btn btn-sm btn-outline-secondary"
-                            >
-                              Edit
-                            </button>
-                          </div>
-                          <small class="text-muted">9 mins</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="row secondary-content-row text-center">
               <div class="col-md-12">
                 <h1>Latest Properties</h1>
@@ -324,52 +186,16 @@
               <h1>Secondary Footer</h1>
             </div>
           </div>
-          <div class="row page-footer">
-            <!-- Footer -->
-            <footer
-              class="text-center text-white"
-              style="background-color: #0a4275"
-            >
-              <!-- Grid container -->
-              <div class="container p-4 pb-0">
-                <!-- Section: CTA -->
-                <section class="">
-                  <p class="d-flex justify-content-center align-items-center">
-                    <span class="me-3">Register for free</span>
-                    <button
-                      type="button"
-                      class="btn btn-outline-light btn-rounded"
-                    >
-                      Sign up!
-                    </button>
-                  </p>
-                </section>
-                <!-- Section: CTA -->
-              </div>
-              <!-- Grid container -->
-
-              <!-- Copyright -->
-              <div
-                class="text-center p-3 mb-3"
-                style="background-color: rgba(0, 0, 0, 0.2)"
-              >
-                © 2020 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/"
-                  >MDBootstrap.com</a
-                >
-              </div>
-              <!-- Copyright -->
-            </footer>
-            <!-- Footer -->
-          </div>
         </div>
-        <!-- START property card -->
-
-        <!-- END property card -->
       </div>
     </main>
-    <!-- END main container -->
+
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
