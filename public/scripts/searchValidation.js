@@ -7,7 +7,7 @@ const cityInput = document.getElementById("city-input");
 const postcodeInput = document.getElementById("postcode-input");
 
 const clearInputIn = (element) => {
-  element.value = undefined;
+  element.value = ``;
 };
 
 cityInput.addEventListener(`input`, (e) => {

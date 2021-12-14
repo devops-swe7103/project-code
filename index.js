@@ -172,10 +172,26 @@ app.get(`/property/:propertyID/appointment`, (req, res) => {
     res.send(`ERROR: GET: /property/:propertyID/appointment ${propertyID}`);
   }
 });
-app.post(`/property/:propertyID/appointment`, (req, res) => {
+app.post(`/property/:propertyID/appointment`, urlEncodedParser, (req, res) => {
   const { propertyID } = req.params;
   if (propertyID) {
-    res.send(`POST: /property/:propertyID/appointment ${propertyID}`);
+    console.log(req.body);
+
+    const {
+      firstName,
+      lastName,
+      emailAddress,
+      phoneNumber,
+      message,
+      viewProperty,
+    } = req.body;
+
+    const valuesRecieved = `VALUES RECIEVED: ${firstName} ${lastName} ${emailAddress} ${phoneNumber} ${message} ${viewProperty}`;
+
+    // res.send(
+    //   `POST: /property/:propertyID/appointment ${propertyID} ${valuesRecieved}`
+    // );
+    res.redirect(`/property/${propertyID}/`);
   } else {
     res.send(`ERROR: POST: /property/:propertyID/appointment ${propertyID}`);
   }
