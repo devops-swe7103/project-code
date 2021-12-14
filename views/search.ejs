@@ -1,5 +1,5 @@
 <%# getting header content from /partials/header.ejs %> <%-
-include("./partials/header.ejs") %>
+include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
 
 <!-- Full Page Image Header with Vertically Centered Content -->
 <div class="search-page">
@@ -15,7 +15,12 @@ include("./partials/header.ejs") %>
                 <label for="city" class="form-label">
                   <div class="search-heading">Search by City</div>
                 </label>
-                <input type="text" name="city" class="form-control" />
+                <input
+                  id="city-input"
+                  type="text"
+                  name="city"
+                  class="form-control"
+                />
               </div>
               <div class="col-md-2" style="font-size: 2rem">
                 <div class="search-heading">OR</div>
@@ -24,7 +29,12 @@ include("./partials/header.ejs") %>
                 <label for="postcode" class="form-label">
                   <div class="search-heading">Search by Postcode</div>
                 </label>
-                <input type="text" name="postcode" class="form-control" />
+                <input
+                  id="postcode-input"
+                  type="text"
+                  name="postcode"
+                  class="form-control"
+                />
               </div>
             </div>
             <div class="row">
@@ -127,4 +137,5 @@ include("./partials/header.ejs") %>
 </div>
 
 <%# getting footer from partials/footer.ejs %> <%-
-include(`./partials/footer.ejs`) %>
+include(`./partials/footer.ejs`, { additionalScripts:
+[`/scripts/searchValidation.js`]}) %>

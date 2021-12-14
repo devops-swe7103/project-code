@@ -43,10 +43,12 @@ app.get(`/base`, (req, res) => {
 });
 
 // /search/
+// get method will render the search form
 app.get(`/search/`, (req, res) => {
   // res.send(`GET: /search/`);
   res.render(`search`);
 });
+// post method will send the data to the server
 app.post(`/search/`, urlEncodedParser, (req, res) => {
   if (!req.body) {
     res.sendStatus(400);
@@ -65,23 +67,27 @@ app.post(`/search/`, urlEncodedParser, (req, res) => {
      ${minPrice},
      ${maxPrice}`);
     // res.sendStatus(200);
+
+    // TODO: get the data from req.body, query the db for data, process and display on results page
   }
 });
 
-// /search/city/
-app.get(`/search/city/`, (req, res) => {
-  res.send(`GET: /search/city/`);
+// /search/city/:city
+// get method will render the result page of properties in a city
+app.get(`/search/city/:city`, (req, res) => {
+  res.send(`GET: /search/city/:city`);
 });
-app.post(`/search/city/`, (req, res) => {
-  res.send(`POST: /search/city/`);
+app.post(`/search/city/:city`, (req, res) => {
+  res.send(`POST: /search/city/:city`);
 });
 
-// /search/postcode/
-app.get(`/search/postcode/`, (req, res) => {
-  res.send(`GET: /search/postcode/`);
+// /search/postcode/:postcode
+// get method will render the result page of properties in a particular postcode
+app.get(`/search/postcode/:postcode`, (req, res) => {
+  res.send(`GET: /search/postcode/:postcode`);
 });
-app.post(`/search/postcode/`, (req, res) => {
-  res.send(`POST: /search/postcode/`);
+app.post(`/search/postcode/:postcode`, (req, res) => {
+  res.send(`POST: /search/postcode/:postcode`);
 });
 
 // /properties/all/

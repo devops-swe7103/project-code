@@ -1,5 +1,5 @@
 <%# getting header content from /partials/header.ejs %> <%-
-include("./partials/header.ejs") %>
+include("./partials/header.ejs", {pageTitle: `Property Listing Page`}) %>
 
 <div class="property-listing-page">
   <div class="row main-content">
@@ -196,4 +196,4 @@ include("./partials/header.ejs") %>
 </div>
 
 <%# getting footer from partials/footer.ejs %> <%-
-include(`./partials/footer.ejs`) %>
+include(`./partials/footer.ejs`, {additionalScripts: []}) %>

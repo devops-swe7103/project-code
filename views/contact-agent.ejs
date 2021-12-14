@@ -1,5 +1,5 @@
 <%# getting header content from /partials/header.ejs %> <%-
-include("./partials/header.ejs") %>
+include("./partials/header.ejs", {pageTitle:`Contact Agent Page`}) %>
 
 <div class="contact-agent-page">
   <div class="row">
@@ -67,4 +67,4 @@ include("./partials/header.ejs") %>
 </div>
 
 <%# getting footer from partials/footer.ejs %> <%-
-include(`./partials/footer.ejs`) %>
+include(`./partials/footer.ejs`, {additionalScripts: []}) %>
