@@ -2,6 +2,14 @@ const express = require(`express`);
 const path = require(`path`);
 const bodyParser = require(`body-parser`);
 
+// getting a propertyObject template for testing the render
+const {
+  generatePropertyObjectFromFormData,
+} = require(`./public/scripts/propertyObject.js`);
+// console.log(generatePropertyObjectFromFormData);
+// console.log(typeof generatePropertyObjectFromFormData);
+// const propertyObject = require(`./public/scripts/propertyObject.js`);
+
 // initializing express
 const app = express();
 
@@ -36,11 +44,6 @@ app.get(`/`, (req, res) => {
 // /agent/:agentID
 
 // all routes below
-
-// /base
-app.get(`/base`, (req, res) => {
-  res.render(`base`);
-});
 
 // /search/
 // get method will render the search form
@@ -137,9 +140,12 @@ app.post(`/properties/city/:city`, (req, res) => {
 
 // /property/add
 app.get(`/property/add`, (req, res) => {
-  res.send(`GET: /property/add`);
+  // res.send(`GET: /property/add`);
+  res.render(`add-property`);
 });
-app.post(`/property/add`, (req, res) => {
+app.post(`/property/add`, urlEncodedParser, (req, res) => {
+  // req.body contains the form data and we will generate the property object from this data
+  console.log(generatePropertyObjectFromFormData(req.body));
   res.send(`POST: /property/add`);
 });
 
@@ -148,7 +154,12 @@ app.get(`/property/:propertyID`, (req, res) => {
   const { propertyID } = req.params;
   if (propertyID) {
     // res.send(`GET: /property/:propertyID ${propertyID}`);
-    res.render(`single-property`, { propertyID });
+    // TODO: the propertyObject will be fetched from the database and passed as a parameter to render
+    // console.log(propertyObject);
+    console.log(`In app.get("/property/:propertyID")`);
+    res.render(`single-property`, {
+      property: propertyObject,
+    });
   } else {
     res.send(`ERROR: GET: /property/:propertyID ${propertyID}`);
   }

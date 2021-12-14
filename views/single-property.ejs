@@ -1,10 +1,28 @@
-<%# getting header content from /partials/header.ejs %> <%-
-include("./partials/header.ejs", {pageTitle: `Single Property Page`}) %>
+<%# getting header content from /partials/header.ejs %>
+<%- include("./partials/header.ejs", {pageTitle: `Single Property Page`}) %>
+<%# the property object details will be fetched from the database when the request is made and the object is recieved here %>
+
+<%# initializing required variables %>
+<% const propertyID = `p1`; %>
+
+<%# creating a dummy object to represent a property  %>
+<% const p = {
+id: `p1`, propertyName: `A`, displayTitle: `2 BHK in Piccadilly, Manchester`,
+rent: { monthly: 750, weekly: 190 }, layout: { description: `3 bhk flat to
+rent`, bedrooms: 1, hall: 1, kitchen: 1, }, location: { area: `Piccadilly`,
+city: `Manchester`, postcode: `M45LG`, },}; %>
+
+<%# creating helper functions to convert/obtain text from status codes %>
+<% function furnishTypeText(code)
+{ let text = ``; switch (code) { case 0: text = `Not Furnished`; break; case 1:
+text = `Part Furnished`; break; case 2: text = `Fully Furnished`; break;
+default: throw new Error(`ERR: property.params.furnishTypeCode invalid`); }
+return text;}; console.log(furnishTypeText(0)); %>
 
 <div class="property-page">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h1>Property Details: <%= propertyID %></h1>
+      <h1>Property Details: <%= p.displayTitle %></h1>
     </div>
   </div>
   <div class="row">
@@ -89,20 +107,24 @@ include("./partials/header.ejs", {pageTitle: `Single Property Page`}) %>
           <div class="col-12">
             <div class="rent-amount">
               <span class="rent-monthly"
-                >£<span id="rent-monthly-amount">995</span> pcm</span
+                >£<span id="rent-monthly-amount"><%= p.rent.monthly %> </span>
+                pcm</span
               >
               <span class="rent-weekly"
-                >£<span id="rent-weekly-amount">205</span> pw</span
+                >£<span id="rent-weekly-amount"
+                  ><%= p.rent.weekly || Math.floor(p.rent.monthly/4) %>
+                </span>
+                pw</span
               >
               <div class="badge bg-primary" id="property-badge">
                 Added 5 days ago
               </div>
             </div>
-            <div class="property-layout">3 bed flat to rent</div>
+            <div class="property-layout"><%= p.layout.description %></div>
             <div class="property-location">
-              <span id="area">Bradshawgate</span>
-              <span id="city">Manchester</span>
-              <span id="postcode">M4</span>
+              <span id="area"><%= p.location.area %></span>
+              <span id="city"><%= p.location.city %></span>
+              <span id="postcode"><%= p.location.postcode %></span>
             </div>
           </div>
         </div>
@@ -114,7 +136,9 @@ include("./partials/header.ejs", {pageTitle: `Single Property Page`}) %>
         <div class="row mt-1 mb-2 text-center border-bottom border-3">
           <div class="col-6 letting-type">
             <div class="property-parameter-title">Let Type</div>
-            <div class="property-parameter-detail" id="let-type">Long Term</div>
+            <div class="property-parameter-detail" id="let-type">
+              <%# p.params.duration %>
+            </div>
           </div>
           <div class="col-6 furnish-type">
             <div class="property-parameter-title">Furnish Type</div>
@@ -308,4 +332,5 @@ include("./partials/header.ejs", {pageTitle: `Single Property Page`}) %>
 </div>
 
 <%# getting footer from partials/footer.ejs %> <%-
-include(`./partials/footer.ejs`, {additionalScripts: []}) %>
+include(`./partials/footer.ejs`, {additionalScripts:
+[`/scripts/propertyObject.js`]}) %>
