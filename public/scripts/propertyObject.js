@@ -1,3 +1,5 @@
+const { v4: uuid } = require("uuid");
+
 console.log(`in propertyObject.js`);
 
 // const objectTemplate = {
@@ -97,7 +99,39 @@ const dictionary = {
     `How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz.`,
     `Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack! " my brave`,
   ],
-  description: [],
+  layoutDescription: [
+    `Lorem ipsum dolor sit amet, consectetuer adipiscing elit.`,
+    `Aenean commodo ligula eget dolor.`,
+    `Aenean massa.`,
+    `Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.`,
+    `Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.`,
+    `Nulla consequat massa quis enim.`,
+    `Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.`,
+    `In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.`,
+    `Nullam dictum felis eu pede mollis pretium.`,
+    `Integer tincidunt.`,
+    `Cras dapibus.`,
+    `Vivamus elementum semper nisi.`,
+    `Aenean vulputate eleifend tellus.`,
+    `Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.`,
+    `Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.`,
+    `Phasellus viverra nulla ut metus varius laoreet.`,
+    `Quisque rutrum.`,
+    `Aenean imperdiet.`,
+    `Etiam ultricies nisi vel augue.`,
+    `Curabitur ullamcorper ultricies nisi.`,
+    `Nam eget dui.`,
+    `Etiam rhoncus ipsum.`,
+    `Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.`,
+    `Maecenas nec odio et ante tincidunt tempus.`,
+    `Donec vitae sapien ut libero venenatis faucibus.`,
+    `Nullam quis ante.`,
+    `Etiam sit amet orci eget eros faucibus tincidunt.`,
+    `Duis leo.`,
+    `Sed fringilla mauris sit amet nibh.`,
+    `Donec sodales sagittis magna.`,
+    `Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,`,
+  ],
   area: [
     ` Westminster`,
     `Kensington`,
@@ -257,8 +291,8 @@ function generatePropertyObjectFromFormData(o) {
   const monthly = o.rentMonthly || Math.floor(helper.randMinMax(500, 2500));
   const weekly = Math.floor(monthly / 4);
 
-  let objectTemplate = {
-    id: `p1`,
+  let propertyObject = {
+    id: uuid(),
     displayTitle: o.displayTitle || helper.randArr(dictionary.displayTitle),
     rent: {
       monthly: o.rentMonthly || Math.floor(Math.random() * 1000),
@@ -266,10 +300,10 @@ function generatePropertyObjectFromFormData(o) {
     },
     layout: {
       description:
-        o.layoutDescription || helper.randArr(dictionary.description),
-      bedrooms: o.bedroomCount,
-      hall: o.hallCount,
-      kitchen: o.kitchenCount,
+        o.layoutDescription || helper.randArr(dictionary.layoutDescription),
+      bedrooms: o.bedroomCount || Math.floor(helper.randMinMax(1, 10)),
+      hall: o.hallCount || Math.floor(helper.randMinMax(1, 3)),
+      kitchen: o.kitchenCount || Math.floor(helper.randMinMax(1, 2)),
     },
     location: {
       area: o.area || helper.randArr(dictionary.area),
@@ -300,7 +334,7 @@ function generatePropertyObjectFromFormData(o) {
   Ipsum iste facere officia in expedita commodi minus quisquam repudiandae? Aspernatur consequuntur suscipit autem, perspiciatis unde modi in totam. Facilis, assumenda maxime!`,
   };
 
-  return objectTemplate;
+  return propertyObject;
 }
 
 // exports.propertyObject = propertyObject;

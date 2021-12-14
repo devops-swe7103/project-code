@@ -1,14 +1,13 @@
 const express = require(`express`);
 const path = require(`path`);
 const bodyParser = require(`body-parser`);
+const { v4: uuid } = require("uuid");
 
 // getting a propertyObject template for testing the render
 const {
   generatePropertyObjectFromFormData,
 } = require(`./public/scripts/propertyObject.js`);
-// console.log(generatePropertyObjectFromFormData);
-// console.log(typeof generatePropertyObjectFromFormData);
-// const propertyObject = require(`./public/scripts/propertyObject.js`);
+const propertyObject = require(`./public/scripts/propertyObject.js`);
 
 // initializing express
 const app = express();
@@ -146,7 +145,9 @@ app.get(`/property/add`, (req, res) => {
 app.post(`/property/add`, urlEncodedParser, (req, res) => {
   // req.body contains the form data and we will generate the property object from this data
   console.log(generatePropertyObjectFromFormData(req.body));
-  res.send(`POST: /property/add`);
+  // res.send(`POST: /property/add
+  // redirecting the user to all properties page after processing data
+  res.render(`property-listing-page`);
 });
 
 // /property/:propertyID

@@ -196,4 +196,5 @@ include("./partials/header.ejs", {pageTitle: `Property Listing Page`}) %>
 </div>
 
 <%# getting footer from partials/footer.ejs %> <%-
-include(`./partials/footer.ejs`, {additionalScripts: []}) %>
+include(`./partials/footer.ejs`, {additionalScripts:
+[`/scripts/propertiesDB.js`]}) %>
