@@ -1,6 +1,6 @@
 const { v4: uuid } = require("uuid");
 
-console.log(`in propertyObject.js`);
+// console.log(`connected propertyObject.js`);
 
 // const objectTemplate = {
 //   id: `p1`,
@@ -302,7 +302,7 @@ function generatePropertyObjectFromFormData(o) {
       description:
         o.layoutDescription || helper.randArr(dictionary.layoutDescription),
       bedrooms: o.bedroomCount || Math.floor(helper.randMinMax(1, 10)),
-      hall: o.hallCount || Math.floor(helper.randMinMax(1, 3)),
+      bathrooms: o.bathroomCount || Math.floor(helper.randMinMax(1, 3)),
       kitchen: o.kitchenCount || Math.floor(helper.randMinMax(1, 2)),
     },
     location: {
@@ -339,6 +339,10 @@ function generatePropertyObjectFromFormData(o) {
 
 // exports.propertyObject = propertyObject;
 exports.generatePropertyObjectFromFormData = generatePropertyObjectFromFormData;
+
+// exporting helper and dictionary functions to be used to generate dummy data in propetiesDB
+exports.helper = helper;
+exports.dictionary = dictionary;
 
 // const formDataObject = {
 //   displayTitle: "",

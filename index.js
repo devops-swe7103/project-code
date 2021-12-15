@@ -94,8 +94,17 @@ app.post(`/search/postcode/:postcode`, (req, res) => {
 
 // /properties/all/
 app.get(`/properties/all/`, (req, res) => {
-  // res.send(`GET: /properties/all/`);
-  res.render(`property-listing-page`);
+  // generating dummy properties
+  const {
+    generateDummyProperties,
+  } = require(`./public/scripts/propertiesDB.js`);
+
+  // propertiesArray will contain all the property objects to display
+  // this array will be fetched/generated from the DB
+  const propertiesArray = generateDummyProperties(2);
+
+  // then this array will be passed as a parameter to the ejs template to render
+  res.render(`property-listing-page`, { propertiesArray });
 });
 app.post(`/properties/all/`, (req, res) => {
   res.send(`POST: /properties/all/`);
@@ -147,7 +156,7 @@ app.post(`/property/add`, urlEncodedParser, (req, res) => {
   console.log(generatePropertyObjectFromFormData(req.body));
   // res.send(`POST: /property/add
   // redirecting the user to all properties page after processing data
-  res.render(`property-listing-page`);
+  res.redirect(`/properties/all/`);
 });
 
 // /property/:propertyID

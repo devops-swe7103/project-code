@@ -705,6 +705,7 @@ main #content {
 /* END search page */
 
 /* Add Property page start */
+/* TODO: rewrite this part and omit the bootstrap classes */
 .p-5.container form {
   padding: 20px;
   background: #b7babd;
@@ -745,19 +746,17 @@ section.p-5.container h1 {
   margin: 0 0px 30px;
 }
 
-
 /* Add Property page End */
 
 /* Search page Start */
-
-
+/* TODO: rewrite this part and omit the bootstrap classes */
 .searchcity .row div {
   height: 200px;
 }
 
 .searchcity div {
   margin-bottom: 10px;
-} 
+}
 
 section.py-5 {
   color: #000;
@@ -765,5 +764,6 @@ section.py-5 {
 .sbcity h2 {
   text-align: center;
   margin: 0 0px 30px;
-} 
+}
+
 /* Search page page End */
