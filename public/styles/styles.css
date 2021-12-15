@@ -703,3 +703,67 @@ main #content {
   padding: 20px 5px;
 }
 /* END search page */
+
+/* Add Property page start */
+.p-5.container form {
+  padding: 20px;
+  background: #b7babd;
+  color: #000;
+  border-radius: 10px;
+}
+
+section.p-5.container label.formbuilder-text-label {
+  margin: 5px 0;
+}
+
+section.p-5.container h3 {
+  margin: 10px 0;
+}
+
+section.p-5.container input {
+  margin-bottom: 15px;
+}
+
+label.formbuilder-textarea-label {
+  margin: 10px 0;
+}
+section.p-5.container button {
+  margin: 20px 0;
+  background: #000;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+section.p-5.container select {
+  margin: 5px 0 20px;
+}
+
+section.p-5.container h1 {
+  text-align: center;
+  margin: 0 0px 30px;
+}
+
+
+/* Add Property page End */
+
+/* Search page Start */
+
+
+.searchcity .row div {
+  height: 200px;
+}
+
+.searchcity div {
+  margin-bottom: 10px;
+} 
+
+section.py-5 {
+  color: #000;
+}
+.sbcity h2 {
+  text-align: center;
+  margin: 0 0px 30px;
+} 
+/* Search page page End */
