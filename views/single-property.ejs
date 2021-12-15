@@ -1,0 +1,336 @@
+<%# getting header content from /partials/header.ejs %>
+<%- include("./partials/header.ejs", {pageTitle: `Single Property Page`}) %>
+<%# the property object details will be fetched from the database when the request is made and the object is recieved here %>
+
+<%# initializing required variables %>
+<% const propertyID = `p1`; %>
+
+<%# creating a dummy object to represent a property  %>
+<% const p = {
+id: `p1`, propertyName: `A`, displayTitle: `2 BHK in Piccadilly, Manchester`,
+rent: { monthly: 750, weekly: 190 }, layout: { description: `3 bhk flat to
+rent`, bedrooms: 1, hall: 1, kitchen: 1, }, location: { area: `Piccadilly`,
+city: `Manchester`, postcode: `M45LG`, },}; %>
+
+<%# creating helper functions to convert/obtain text from status codes %>
+<% function furnishTypeText(code)
+{ let text = ``; switch (code) { case 0: text = `Not Furnished`; break; case 1:
+text = `Part Furnished`; break; case 2: text = `Fully Furnished`; break;
+default: throw new Error(`ERR: property.params.furnishTypeCode invalid`); }
+return text;}; console.log(furnishTypeText(0)); %>
+
+<div class="property-page">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Property Details: <%= p.displayTitle %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <!-- START carousel and property details -->
+    <div class="col-md-8">
+      <!-- START carousel -->
+      <div class="row carousel">
+        <!-- Carousel -->
+        <div id="demo" class="col-12 carousel slide" data-bs-ride="carousel">
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#demo"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#demo"
+              data-bs-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#demo"
+              data-bs-slide-to="2"
+            ></button>
+          </div>
+
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://picsum.photos/1280/640?random=1"
+                alt="Los Angeles"
+                class="d-block"
+                style="width: 100%"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/1280/640?random=2"
+                alt="Chicago"
+                class="d-block"
+                style="width: 100%"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/1280/640?random=3"
+                alt="New York"
+                class="d-block"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <!-- Left and right controls/icons -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#demo"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#demo"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+      <!-- END carousel -->
+
+      <!-- START property cost parameters -->
+      <div class="property-title-card">
+        <div class="row text-center pb-2 mb-1">
+          <div class="col-12">
+            <div class="rent-amount">
+              <span class="rent-monthly"
+                >£<span id="rent-monthly-amount"><%= p.rent.monthly %> </span>
+                pcm</span
+              >
+              <span class="rent-weekly"
+                >£<span id="rent-weekly-amount"
+                  ><%= p.rent.weekly || Math.floor(p.rent.monthly/4) %>
+                </span>
+                pw</span
+              >
+              <div class="badge bg-primary" id="property-badge">
+                Added 5 days ago
+              </div>
+            </div>
+            <div class="property-layout"><%= p.layout.description %></div>
+            <div class="property-location">
+              <span id="area"><%= p.location.area %></span>
+              <span id="city"><%= p.location.city %></span>
+              <span id="postcode"><%= p.location.postcode %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END property cost parameters -->
+
+      <!-- START key property parameters -->
+      <div class="property-parameters">
+        <div class="row mt-1 mb-2 text-center border-bottom border-3">
+          <div class="col-6 letting-type">
+            <div class="property-parameter-title">Let Type</div>
+            <div class="property-parameter-detail" id="let-type">
+              <%# p.params.duration %>
+            </div>
+          </div>
+          <div class="col-6 furnish-type">
+            <div class="property-parameter-title">Furnish Type</div>
+            <div class="property-parameter-detail" id="furnish-type">
+              Furnished
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3 text-center border-bottom border-3">
+          <div class="property-type col-sm-3">
+            <div class="property-parameter-title">Property Type</div>
+            <div class="property-parameter-detail" id="type-detail">
+              Apartment
+            </div>
+          </div>
+          <div class="rooms col-sm-3">
+            <div class="property-parameter-title">Rooms</div>
+            <div class="property-parameter-detail" id="room-count">3</div>
+          </div>
+          <div class="bathrooms col-sm-3">
+            <div class="property-parameter-title">Bathrooms</div>
+            <div class="property-parameter-detail" id="bathroom-count">1</div>
+          </div>
+          <div class="size col-sm-3">
+            <div class="property-parameter-title">Size</div>
+            <div class="property-parameter-detail size-sqft">
+              <span id="sqft-units">761</span> sq. ft.
+            </div>
+            <div class="property-parameter-detail size-sqm">
+              <span id="sqm-units">69</span> sq. m.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END key property parameters -->
+      <!-- START key features -->
+      <div class="property-key-features">
+        <h2>Key Features</h2>
+        <div class="row mb-3">
+          <div class="col-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">A fourth item</li>
+              <li class="list-group-item">And a fifth one</li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">A fourth item</li>
+              <li class="list-group-item">And a fifth one</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END key features -->
+      <!-- START property description detailed -->
+      <div class="property-description">
+        <h2>Property Description</h2>
+        <div class="row mb-3">
+          <div class="col-12">
+            <p>Live the Moda life...</p>
+            <p>
+              Offering no fees or deposits, inclusive 250MBPS
+              WiFi,state-of-the-art amenities, 24-hour concierge, hostedresident
+              events and an onsite maintenance team - getinvolved as little or
+              as much as you want in your community.This is not renting, this is
+              lifestyle evolved to itsfinest.
+            </p>
+            <p>
+              Stylish Apartments...<br />* Open plan living with modernfitted
+              kitchen and space to entertain<br />* Fitted kitchenwith dining
+              space for four<br />* 2 King size bedrooms<br />*En-suite to
+              master bedroom with deluxe rainfall shower<br />*House bathroom
+              with deluxe rainfall shower<br />* Floor toceiling glazing leading
+              on to private balcony<br />* Viewson to beautifully landscaped
+              courtyard
+            </p>
+            <p>
+              Kitchen &amp; Dining<br />Open plan, sleek and modern withquartz
+              worktops and integrated Samsung appliances includingtouch control
+              ceramic induction hob, dual fan oven,microwave, separate stacked
+              fridge and freezer, dishwasherplus washer/dryer. Room to entertain
+              with marble effectdining table and four chairs.
+            </p>
+            <p>
+              Lounge<br />Light and spacious with floor to ceiling windowsand
+              curtains. Plush three-seater sofa and lounge chair,media storage
+              unit with 50" inch Samsung 4K smart TV andnested coffee tables
+              with mirrored tops.
+            </p>
+            <p>
+              Bedrooms<br />Stylish bedrooms including bespoke fittedwardrobes
+              with full height mirror, hanging rail and storage.Ottoman bed with
+              storage, feature headboard and 1,000individual pocket sprung
+              mattress made from naturalmaterials and marble effect bedside
+              tables.
+            </p>
+            <p>
+              Bathrooms<br />Contemporary with porcelain tilingthroughout. House
+              bathroom, plus en-suite to master bedroom,each with deluxe
+              rainfall shower, WC and heated towel rail,plus bespoke vanity
+              cabinet with LED lighting.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- END property description detailed -->
+      <!-- START location map -->
+      <div class="property-location-map">
+        <h2>Map</h2>
+        <div class="row mb-3">
+          <div class="col-12">
+            <div id="property-map">
+              <img src="/assets/mockups/map.jpg" alt="map" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END location map -->
+      <!-- START agent details -->
+      <div class="agent-details">
+        <h2>About the Agent</h2>
+        <div class="row mb-3">
+          <div class="col-9">
+            <div id="agent-details-name">Moda, Angel Gardens</div>
+            <div id="agent-details-address">
+              Rochdale Road, Manchester M4 4GE
+            </div>
+            <div id="agent-details-description">
+              A whole new way to rent. From studio to penthouse apartments,
+              fully furnished, beautifully designed homes in the heart of the
+              cities you love. State-of-the-art amenities including shared
+              lounges, residents' gym, cinema, rooftop BBQ terraces and flexible
+              workspace. Unparalleled service with 24-hour concierge,
+              maintenance and free 250MBPS internet... all included in your
+              rent.
+            </div>
+          </div>
+          <div class="col-3">
+            <div id="agent-details-logo">
+              <img src="/assets/mockups/agent-logo.jpg" alt="agent logo" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END agent details -->
+    </div>
+    <!-- END carousel and property details -->
+
+    <!-- START agent details card -->
+    <div class="col-md-4">
+      <div class="agent-card">
+        <div class="row p-3">
+          <div class="col-md-12 text-center">
+            <div class="agent-cart-title">Marketed By</div>
+            <img
+              alt="Bootstrap Image Preview"
+              src="/assets/mockups/agent-logo.jpg"
+            />
+            <div class="agent-card-name">Moda, Angel Gardens</div>
+            <div class="agent-card-address">
+              Rochdale Road, Manchester M4 4GE
+            </div>
+            <div class="agent-card-contact m-1 pt-2 pb-2">
+              Call agent:
+              <span id="agent-card-phone-number">0161 468 1439</span>
+              <form
+                action="/property/<%= propertyID %> /appointment"
+                method="get"
+              >
+                <button
+                  type="submit"
+                  class="btn button button-secondary"
+                  id="agent-card-contact-button"
+                >
+                  Request Details
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END agent details card -->
+  </div>
+</div>
+
+<%# getting footer from partials/footer.ejs %> <%-
+include(`./partials/footer.ejs`, {additionalScripts:
+[`/scripts/propertyObject.js`]}) %>

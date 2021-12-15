@@ -1,0 +1,139 @@
+<%# getting header content from /partials/header.ejs %> <%-
+include("./partials/header.ejs", {pageTitle: `Add Property Page`}) %>
+
+<div class="add-property-page">
+  <div class="row main-content">
+    <section class="p-5 container">
+      <h1>Add Property</h1>
+      <form action="/property/add" method="post">
+        <div class="rendered-form">
+          <div class="formbuilder-text form-group field-displayTitle">
+            <label for="displayTitle" class="formbuilder-text-label">Property Display
+              Text</label>
+            <input type="text" placeholder="2 BHK in Piccadilly, Manchester"
+              class="form-control" name="displayTitle" access="false"
+              id="displayTitle">
+          </div>
+          <div class="row">
+            <div class="col-md-6 formbuilder-number form-group field-rentMonthly">
+              <label for="rentMonthly" class="formbuilder-number-label">Rent
+                (pcm)</label>
+              <input type="number" placeholder="750" class="form-control"
+                name="rentMonthly" access="false" min="100" max="1000000"
+                id="rentMonthly">
+            </div>
+            <div class="col-md-6 formbuilder-number form-group field-rentWeekly">
+              <label for="rentWeekly" class="formbuilder-number-label">Rent (pw)</label>
+              <input type="number" placeholder="180" class="form-control"
+                name="rentWeekly" access="false" min="0" max="100000" id="rentWeekly">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h3 access="false" id="control-9386493">Layout</h3>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-12 formbuilder-text form-group field-layoutDescription">
+            <label for="layoutDescription"
+              class="formbuilder-text-label">Description</label>
+            <input type="textarea" placeholder="3 bhk flat to rent" class="form-control"
+              name="layoutDescription" access="false" id="layoutDescription" rows="3">
+          </div>
+          </div>
+          <div class="row">
+          <div class="col-md-4 formbuilder-number form-group field-bedroomCount">
+            <label for="bedroomCount"
+              class="formbuilder-number-label">Bedrooms</label>
+            <input type="number" placeholder="1" class="form-control"
+              name="bedroomCount" access="false" min="0" max="25" step="1"
+              id="bedroomCount">
+          </div>
+          <div class="col-md-4 formbuilder-number form-group field-hallCount">
+            <label for="hallCount" class="formbuilder-number-label">Bathrooms</label>
+            <input type="number" placeholder="1" class="form-control" name="hallCount"
+              access="false" min="0" max="25" step="1" id="bathroomCount">
+          </div>
+          <div class="col-md-4 formbuilder-number form-group field-kitchenCount">
+            <label for="kitchenCount" class="formbuilder-number-label">Kitchen</label>
+            <input type="number" placeholder="1" class="form-control"
+              name="kitchenCount" access="false" min="0" max="25" step="1"
+              id="kitchenCount">
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h3 access="false" id="control-9837772">Location</h3>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-4 formbuilder-text form-group field-area">
+            <label for="area" class="formbuilder-text-label">Area</label>
+            <input type="text" placeholder="Piccadilly" class="form-control"
+              name="area" access="false" id="area">
+          </div>
+          <div class="col-md-4 formbuilder-text form-group field-city">
+            <label for="city" class="formbuilder-text-label">City/Town</label>
+            <input type="text" placeholder="Manchester" class="form-control"
+              name="city" access="false" id="city">
+          </div>
+          <div class="col-md-4 formbuilder-text form-group field-postcode">
+            <label for="postcode" class="formbuilder-text-label">Postcode</label>
+            <input type="text" placeholder="ML1 1QD" class="form-control"
+              name="postcode" access="false" id="postcode">
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+            <h3 access="false" id="control-6111972">Other Specifications</h3>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-6 formbuilder-select form-group field-durationCode">
+            <label for="durationCode"
+              class="formbuilder-select-label">Duration</label>
+            <select class="form-control" name="durationCode" id="durationCode">
+              <option value="0" selected="true" id="durationCode-0">Short Tern
+              </option>
+              <option value="1" id="durationCode-1">Long Term</option>
+            </select>
+          </div>
+          <div class="col-md-6  formbuilder-select form-group field-furnishTypeCode">
+            <label for="furnishTypeCode" class="formbuilder-select-label">Furnish
+              Type</label>
+            <select class="form-control" name="furnishTypeCode" id="furnishTypeCode">
+              <option value="0" selected="true" id="furnishTypeCode-0">Not Furnished
+              </option>
+              <option value="1" id="furnishTypeCode-1">Part Furnished</option>
+              <option value="2" id="furnishTypeCode-2">Fully Furnished</option>
+            </select>
+          </div>
+          </div>
+          <div class="">
+            <h3 access="false" id="control-2700897">More Details</h3>
+          </div>
+          <div class="formbuilder-textarea form-group field-features">
+            <label for="features" class="formbuilder-textarea-label">Key
+              Features</label>
+            <textarea type="textarea" class="form-control" name="features"
+              access="false" rows="5" id="features"></textarea>
+          </div>
+          <div class="formbuilder-textarea form-group field-features">
+            <label for="description" class="formbuilder-textarea-label">Description</label>
+            <textarea type="textarea" class="form-control" name="description"
+              access="false" rows="5" id="description"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+    <div class="row secondary-content-row text-center">
+      <div class="col-md-12">
+        <h1>Another section here</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# getting footer from partials/footer.ejs %> <%-
+include(`./partials/footer.ejs`, {additionalScripts: []}) %>

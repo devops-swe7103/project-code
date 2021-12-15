@@ -6,6 +6,11 @@
   --secondary: #e6e6e6;
   --secondary-light: #f3f3f3;
   --secondary-dark: #929292;
+
+  --text: #161616;
+  --text-subtle: #252525;
+  --text-light: #fafafa;
+  --text-subtle-light: #f0f0f0;
 }
 
 html {
@@ -18,8 +23,8 @@ body {
   font-weight: 500;
 }
 
-body main > div.container-fluid {
-  padding-top: 60px;
+main #content {
+  padding: 55px 0px 0;
 }
 
 /* START BUTTONS */
@@ -435,7 +440,8 @@ body main > div.container-fluid {
 /* START property listing cards */
 
 .property-listing-page {
-  display: inherit;
+  display: flex;
+  flex-direction: column;
 }
 
 .property-listing-page .page-header {
@@ -447,7 +453,8 @@ body main > div.container-fluid {
 
 .property-listing-page .page-title-column {
   font-size: 2.5rem;
-  padding: 0.25rem;
+  /* padding: 0.25rem; */
+  padding-left: 2rem;
 }
 
 .page-title-column #location-name {
@@ -647,3 +654,116 @@ body main > div.container-fluid {
 }
 
 /* END footer similar properties row */
+
+/* START search page */
+
+.search-page {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--text-light);
+}
+
+.search-page .masthead {
+  height: 75vh;
+  min-height: 500px;
+
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.95) 100%
+    ),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=10");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-size: 2rem;
+}
+
+.search-page #search-form {
+  /* color: var(--text-subtle-light); */
+  color: var(--text);
+  opacity: 1;
+  font-size: 1.5rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+#search-form .search-heading {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+#search-form .sub-section {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  margin: 20px -5px;
+  padding: 20px 5px;
+}
+/* END search page */
+
+/* Add Property page start */
+/* TODO: rewrite this part and omit the bootstrap classes */
+.p-5.container form {
+  padding: 20px;
+  background: #b7babd;
+  color: #000;
+  border-radius: 10px;
+}
+
+section.p-5.container label.formbuilder-text-label {
+  margin: 5px 0;
+}
+
+section.p-5.container h3 {
+  margin: 10px 0;
+}
+
+section.p-5.container input {
+  margin-bottom: 15px;
+}
+
+label.formbuilder-textarea-label {
+  margin: 10px 0;
+}
+section.p-5.container button {
+  margin: 20px 0;
+  background: #000;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+section.p-5.container select {
+  margin: 5px 0 20px;
+}
+
+section.p-5.container h1 {
+  text-align: center;
+  margin: 0 0px 30px;
+}
+
+/* Add Property page End */
+
+/* Search page Start */
+/* TODO: rewrite this part and omit the bootstrap classes */
+.searchcity .row div {
+  height: 200px;
+}
+
+.searchcity div {
+  margin-bottom: 10px;
+}
+
+section.py-5 {
+  color: #000;
+}
+.sbcity h2 {
+  text-align: center;
+  margin: 0 0px 30px;
+}
+
+/* Search page page End */

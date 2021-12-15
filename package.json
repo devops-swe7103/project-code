@@ -1,0 +1,25 @@
+{
+  "name": "project-code",
+  "version": "0.0.1",
+  "description": "a property finder sandbox app\\",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devops-swe7103/project-code.git"
+  },
+  "author": "ogaamyr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devops-swe7103/project-code/issues"
+  },
+  "homepage": "https://github.com/devops-swe7103/project-code#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  }
+}

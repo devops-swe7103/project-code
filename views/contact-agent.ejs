@@ -1,0 +1,92 @@
+<%# getting header content from /partials/header.ejs %> <%-
+include("./partials/header.ejs", {pageTitle:`Contact Agent Page`}) %>
+
+<div class="contact-agent-page">
+  <div class="row">
+    <div class="col-md-8 p-4">
+      <h1>Contact Agent: <%= propertyID %></h1>
+      <!-- Name email phone message optional view property  -->
+      <form action="/property/<%=propertyID%>/appointment" method="post">
+        <div class="mb-3">
+          <div class="input-group">
+            <span class="input-group-text">First and last name</span>
+            <input type="text" name="firstName" class="form-control" />
+            <input type="text" name="lastName" class="form-control" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email Address</label>
+          <input
+            type="email"
+            name="emailAddress"
+            class="form-control"
+            id="email-address"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            name="phoneNumber"
+            class="form-control"
+            id="phone-number"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            name="message"
+            id="message"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            id="view-property-checkbox"
+            value="true"
+            name="viewProperty"
+            class="form-check-input"
+            checked
+          />
+          <label class="form-check-label" for="view-property-checkbox">
+            I would like to view the property
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-4 p-4">
+      <div class="contact-agent-property-card">
+        <div class="property-image">
+          <img
+            src="/assets/mockups/property-image.jpg"
+            id="property-img-src"
+            sizes="(max-width: 479px) 86vw, (max-width: 767px) 91vw, (max-width: 991px) 93vw, 95vw"
+            alt=""
+            class="image"
+          />
+        </div>
+        <div class="rent-amount">GBP 450 pcm</div>
+        <div class="property-type">Studio to rent</div>
+        <div class="property-location">Bradshawgate, Bolton BL1</div>
+        <div class="property-specs">
+          <div class="text-block">1 Bed 1 Bath</div>
+        </div>
+        <div class="agent-details-row">
+          <div class="agent-details">
+            <div class="agent-name">Livingway</div>
+            <div class="agent-address">
+              G03 Jactin House, 24 Hood Street, Manchester, M4 6WX
+            </div>
+          </div>
+          <img src="/assets/mockups/agent-logo.jpg" alt="" class="agent-logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# getting footer from partials/footer.ejs %> <%-
+include(`./partials/footer.ejs`, {additionalScripts: []}) %>
