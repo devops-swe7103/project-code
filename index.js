@@ -101,7 +101,7 @@ app.get(`/properties/all/`, (req, res) => {
 
   // propertiesArray will contain all the property objects to display
   // this array will be fetched/generated from the DB
-  const propertiesArray = generateDummyProperties(2);
+  const propertiesArray = generateDummyProperties(5);
 
   // then this array will be passed as a parameter to the ejs template to render
   res.render(`property-listing-page`, { propertiesArray });
@@ -148,13 +148,16 @@ app.post(`/properties/city/:city`, (req, res) => {
 
 // /property/add
 app.get(`/property/add`, (req, res) => {
+  // console.log(`In get method.`)
   // res.send(`GET: /property/add`);
   res.render(`add-property`);
 });
 app.post(`/property/add`, urlEncodedParser, (req, res) => {
+  console.log(`In post method.`);
   // req.body contains the form data and we will generate the property object from this data
   console.log(generatePropertyObjectFromFormData(req.body));
-  // res.send(`POST: /property/add
+  // make a db call and add the object to the collection
+  // res.send(`POST: /property/add`);
   // redirecting the user to all properties page after processing data
   res.redirect(`/properties/all/`);
 });

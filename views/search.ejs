@@ -1,5 +1,5 @@
-<%# getting header content from /partials/header.ejs %> <%-
-include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
+<%# getting header content from /partials/header.ejs %> 
+<%- include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
 
 <!-- Full Page Image Header with Vertically Centered Content -->
 <div class="search-page">
@@ -15,12 +15,8 @@ include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
                 <label for="city" class="form-label">
                   <div class="search-heading">Search by City</div>
                 </label>
-                <input
-                  id="city-input"
-                  type="text"
-                  name="city"
-                  class="form-control"
-                />
+                <input id="city-input" type="text" name="city"
+                  class="form-control" />
               </div>
               <div class="col-md-2" style="font-size: 2rem">
                 <div class="search-heading">OR</div>
@@ -29,12 +25,8 @@ include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
                 <label for="postcode" class="form-label">
                   <div class="search-heading">Search by Postcode</div>
                 </label>
-                <input
-                  id="postcode-input"
-                  type="text"
-                  name="postcode"
-                  class="form-control"
-                />
+                <input id="postcode-input" type="text" name="postcode"
+                  class="form-control" />
               </div>
             </div>
             <div class="row">
@@ -94,11 +86,8 @@ include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
               </div>
               <div class="col-md-4 sub-section">
                 <p class="search-heading">Type</p>
-                <select
-                  class="form-select"
-                  name="propertyType"
-                  id="property-type"
-                >
+                <select class="form-select" name="propertyType"
+                  id="property-type">
                   <option value="all" selected>All Types</option>
                   <option value="house">Houses</option>
                   <option value="flat">Flats</option>
@@ -107,11 +96,8 @@ include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
             </div>
             <div class="row">
               <div class="d-grid gap-2 col-6 mx-auto">
-                <button
-                  type="submit"
-                  value="submit"
-                  class="btn btn-primary btn-lg"
-                >
+                <button type="submit" value="submit"
+                  class="btn btn-primary btn-lg">
                   Search
                 </button>
               </div>
@@ -144,38 +130,43 @@ include("./partials/header.ejs", {pageTitle: `Search Page`}) %>
     <div class="searchcity">
       <div class="row">
         <a class="col-md-8" href="#">
-          <div style="background-image:url('../assets/mockups/property-image.jpg')"> 
+          <div
+            style="background-image:url('../assets/mockups/property-image.jpg')">
           </div>
         </a>
         <a class="col-md-4" href="#">
-          <div style="background-image:url('../assets/mockups/property-image.jpg')"> 
+          <div
+            style="background-image:url('../assets/mockups/property-image.jpg')">
           </div>
         </a>
       </div>
       <div class="row">
         <a class="col-md-6" href="#">
-          <div style="background-image:url('../assets/mockups/property-image.jpg')"> 
+          <div
+            style="background-image:url('../assets/mockups/property-image.jpg')">
           </div>
         </a>
         <a class="col-md-6" href="#">
-          <div style="background-image:url('../assets/mockups/property-image.jpg')"> 
+          <div
+            style="background-image:url('../assets/mockups/property-image.jpg')">
           </div>
         </a>
       </div>
       <div class="row">
         <a class="col-md-4" href="#">
-          <div style="background-image:url('../assets/mockups/property-image.jpg')"> 
+          <div
+            style="background-image:url('../assets/mockups/property-image.jpg')">
           </div>
         </a>
         <a class="col-md-8  " href="#">
-          <div style="background-image:url('../assets/mockups/property-image.jpg')"> 
+          <div
+            style="background-image:url('../assets/mockups/property-image.jpg')">
           </div>
         </a>
       </div>
-    </div>
     </div>
   </div>
 </section>
 
-<%# getting footer from partials/footer.ejs %> <%-
-include(`./partials/footer.ejs`, {additionalScripts: []}) %>
+<%# getting footer from partials/footer.ejs %>
+<%- include(`./partials/footer.ejs`, {additionalScripts: [`/scripts/searchValidation.js`]}) %>
